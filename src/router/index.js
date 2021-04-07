@@ -7,6 +7,7 @@ import Register from '../views/Register'
 import UserBoard from '../views/UserBoard'
 import AdminBoard from '../views/AdminBoard'
 import About from '../views/About'
+import NotFound from '../views/NotFound'
 
 Vue.use(Router);
 
@@ -58,7 +59,8 @@ let router = new Router({
         requiresAuth: true,
         is_admin: true
       }
-    }
+    },
+    { path: '*', component: NotFound}
   ]
 });
 

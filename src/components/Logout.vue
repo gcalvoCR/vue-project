@@ -39,4 +39,10 @@ export default {
         outline: none;
     }
 
+    button:hover{
+        color: #4cbcd8;
+        background: #fff;
+        cursor: grab;
+    }
+
 </style>
