@@ -2,24 +2,30 @@
   <div>
       <!-- <AddTodo v-on:add-todo="addTodo"/> -->
      <!-- <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo"/> -->
+     <Header/>
      <AddTodo />
      <FilterTodos/>
      <Todos/>
+     <Logout/>
   </div>
 </template>
 
 <script>
+import Header from '../components/Header'
 import Todos from '../components/Todos';
 import FilterTodos from '../components/FilterTodos';
 import AddTodo from '../components/AddTodo';
+import Logout from '../components/Logout';
 // import axios from 'axios';
 
 export default {
   name: 'Home',
   components:{
+    Header,
     Todos,
     FilterTodos,
-    AddTodo
+    AddTodo,
+    Logout
   },
   // data(){
   //   return{

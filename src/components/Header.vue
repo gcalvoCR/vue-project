@@ -4,8 +4,7 @@
             <h1>Todo List</h1>
         </span>
           <span class="align-right">
-            <router-link to="/">Home</router-link>
-            <router-link to="/login">Login</router-link>
+            <router-link to="/dashboard">Home</router-link>
             <router-link to="/about">About</router-link>
         </span>  
     </nav>
