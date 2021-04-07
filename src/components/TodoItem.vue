@@ -3,13 +3,14 @@
         <p>
             <input type="checkbox" v-model="checked" v-on:change="markComplete">
             {{todo.title}}
-            <i class="fa fa-minus-circle" @click="$emit('del-todo', todo.id)"></i>
+            <!-- <i class="fa fa-minus-circle" @click="$emit('del-todo', todo.id)"></i> -->
+            <i class="fa fa-minus-circle" @click="deleteTodo(todo.id)"></i>
         </p>
     </div>
 </template>
 
 <script>
-
+import {mapActions} from 'vuex';
 export default {
     name: "TodoItem",
     props: ["todo"],
@@ -19,8 +20,10 @@ export default {
         }
     },
     methods:{
+        ...mapActions(['deleteTodo', 'updateTodo']),
         markComplete() {
             this.todo.completed =!this.todo.completed
+            this.updateTodo(this.todo)
         }
     }
 }

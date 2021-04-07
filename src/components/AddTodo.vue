@@ -1,6 +1,6 @@
 <template>
     <div>
-       <form @submit.prevent="addTodo" autocomplete="off">
+       <form @submit.prevent="onSubmit" autocomplete="off">
                 <input type="text" 
                     v-model="title" 
                     name="title" 
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-
+import {mapActions} from 'vuex';
 
 export default {
     name: "AddTodo",
@@ -29,21 +29,14 @@ export default {
         }
     },
     methods:{
-        addTodo(e){
-            e.preventDefault();
+        ...mapActions(['addTodo']),
+        onSubmit(){
             this.$validator.validateAll().then((result) =>{
                 if (result){
-                    const newTodo = {
-                        // id: uuidv4(),
-                        title: this.title,
-                        completed: false
-                    }
-                    //send up to Todos
-                    this.$emit('add-todo', newTodo);
+                    this.addTodo(this.title);
                     this.title= '';
                 }
             })
-            
         }
     }
 }
@@ -59,17 +52,17 @@ export default {
         color: #aed1d1;
     }
     .alert {
-    background: #fdf2ce;
-    font-weight: bold;
-    display: inline-block;
-    padding: 5px;
-    margin-top: -20px;
-  }
-  .alert-in-enter-active {
-    animation: bounce-in .5s;
-  }
-  .alert-in-leave-active {
-    animation: bounce-in .5s reverse;
-  }
+        background: #fdf2ce;
+        font-weight: bold;
+        display: inline-block;
+        padding: 5px;
+        margin-top: -20px;
+    }
+    .alert-in-enter-active {
+        animation: bounce-in .5s;
+    }
+    .alert-in-leave-active {
+        animation: bounce-in .5s reverse;
+    }
 
 </style>

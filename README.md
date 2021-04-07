@@ -24,7 +24,7 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
-## Topics covered
+## Vue Topics covered
 
 - Text interpolation --> displaying a string in html
   - `{{name}}`
@@ -56,6 +56,18 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## Commands
 - `npm install -g @vue/cli` to install the cli
 - `vue create vue-proj` to create the vue project
+- `npm install vuex` to install vueX
+
+## Vuex (State management and state pattern library)
+
+```
+State     --> App-level state/data 
+Getters   --> Get pieces of state or computed values from state
+Actions   --> Called from components to commit a mutation
+Mutations --> Mutate the state(Update data)
+Modules   --> Each module can have its own state, getters, actions and mutations
+
+```
 
 
 ## Next steps
