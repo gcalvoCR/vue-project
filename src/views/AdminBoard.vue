@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
   <div class="hello">
-    <h1>Welcome to administrator page</h1>
+    <h1>{{msg}}</h1>
     <p>If you are here, that means you are an admin!</p>
     <router-link to="/dashboard">Go to users' dashboard</router-link>
     <Logout/>
@@ -15,7 +15,7 @@ import Logout from '../components/Logout'
 export default {
   data() {
     return {
-      msg: "The superheros"
+      msg: "This is the administrator page"
     };
   },
   components: {

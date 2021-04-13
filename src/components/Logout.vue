@@ -10,8 +10,8 @@
 export default {
     methods:{
         logout(){
-            localStorage.removeItem("jwt")
-            localStorage.removeItem("user")
+            sessionStorage.removeItem("jwt")
+            sessionStorage.removeItem("user")
             this.$router.push("/")
         }
     }
